@@ -1,0 +1,230 @@
+:root {
+    --brand-blue: #5865F2; /* Color principal estilo Discord */
+    --brand-dark: #23272A;
+    --brand-darker: #2C2F33;
+    --text-white: #FFFFFF;
+    --text-muted: #B9BBBE;
+    --input-bg: #202225;
+    --input-border: #202225;
+    --danger: #ED4245;
+    --success: #3BA55C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Tipografía moderna */
+}
+
+body {
+    background-color: #404EED; /* Fondo azul característico */
+    color: var(--text-white);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formas decorativas de fondo */
+.background-shapes .shape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Normalmente aquí irían imágenes SVG, simulamos con gradientes */
+}
+
+/* Contenedor principal */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+/* Páginas (Secciones) */
+.page {
+    display: none; /* Ocultas por defecto */
+    animation: fadeIn 0.5s ease-out;
+    width: 100%;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- LANDING PAGE --- */
+#landing-page .content-wrapper {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Extra bold */
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* --- PAYMENT & SUCCESS CARDS --- */
+.payment-card, .success-card {
+    background-color: #36393F; /* Gris oscuro tema chat */
+    padding: 30px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.success-card {
+    text-align: center;
+}
+
+.payment-card h2, .success-card h2 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.payment-card .subtext {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* --- FORMULARIOS --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    color: var(--text-white);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--brand-blue);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.half {
+    flex: 1;
+}
+
+/* --- BOTONES --- */
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 28px; /* Redondeados estilo píldora */
+    transition: opacity 0.2s, transform 0.1s;
+    font-weight: 500;
+}
+
+.btn:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--text-white); /* En landing es blanco con texto negro */
+    color: var(--brand-dark);
+}
+
+#fake-payment-form .btn-primary, #success-page .btn-primary {
+    /* En formularios dentro de tarjetas oscuras, el primario suele ser el azul de marca */
+    background-color: var(--brand-blue);
+    color: var(--text-white);
+    border-radius: 3px; /* Más cuadrados en formularios */
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    background-color: #23272A;
+    color: var(--text-white);
+}
+
+.btn-link {
+    background: none;
+    color: var(--brand-blue);
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+    box-shadow: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* --- SUCCESS --- */
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}

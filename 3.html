@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para una estética moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo animado/decorativo -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <div class="app-container">
+        
+        <!-- PANTALLA 1: INICIO DE SESIÓN -->
+        <section id="landing-page" class="page active">
+            <div class="content-wrapper">
+                <!-- TÍTULO EDITABLE POR EL USUARIO -->
+                <h1 class="hero-title">IMAGINE A PLACE...</h1>
+                
+                <!-- DESCRIPCIÓN EDITABLE POR EL USUARIO -->
+                <p class="hero-desc">
+                    ...donde puedas formar parte de un club escolar, un grupo de gamers o una comunidad mundial de arte.
+                    Donde tú y tus amigos podáis pasar tiempo juntos. Un lugar que hace que hablar a diario sea fácil y divertido.
+                </p>
+
+                <div class="action-buttons">
+                    <button id="btn-login" class="btn btn-primary">Iniciar Sesión</button>
+                    <!-- Botón decorativo extra -->
+                    <button class="btn btn-secondary">Descargar App</button>
+                </div>
+            </div>
+            
+            <!-- Imagen decorativa a la derecha (opcional, simulada con CSS o img) -->
+            <div class="hero-image-placeholder">
+                <!-- Aquí irían los personajes de la imagen original si los tuviéramos -->
+            </div>
+        </section>
+
+        <!-- PANTALLA 2: PAGO (SIMULADO) -->
+        <section id="payment-page" class="page hidden">
+            <div class="payment-card">
+                <h2>Verificación Requerida</h2>
+                <p class="subtext">Por favor, introduce una tarjeta para verificar tu identidad (Es un paso de seguridad).</p>
+                
+                <form id="fake-payment-form">
+                    <div class="form-group">
+                        <label for="card-name">NOMBRE EN LA TARJETA</label>
+                        <input type="text" id="card-name" placeholder="JOHN DOE" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">NÚMERO DE TARJETA</label>
+                        <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group half">
+                            <label for="card-expiry">FECHA EXP.</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group half">
+                            <label for="card-cvc">CVC</label>
+                            <input type="text" id="card-cvc" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Continuar</button>
+                    <button type="button" id="btn-back" class="btn btn-link">Volver</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- PANTALLA 3: ÉXITO -->
+        <section id="success-page" class="page hidden">
+            <div class="success-card">
+                <div class="success-icon">🎉</div>
+                <h2>¡Gracias por tu compra!</h2>
+                <p>Tu cuenta ha sido verificada correctamente.</p>
+                <button class="btn btn-primary" onclick="location.reload()">Volver al inicio</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
